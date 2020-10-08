@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>VCare</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="created.js"></script>
+        <link href="password.html">
+        <style>
+            body{
+                background-image: url("https://t4.ftcdn.net/jpg/02/66/30/85/240_F_266308565_ZApXhPkSIMKYpUexclrlzbsdoKlClnuA.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <a class="title">VCare</a>
+            </header>    
+            <nav class="menu">
+                <a href="index.html">Home</a>&nbsp;&nbsp;
+                <a href="profile.html">Create Profile </a>&nbsp;&nbsp;
+                <a href="login.html">Login</a>&nbsp;&nbsp;
+                <a href="symptoms.html">Do assessment</a>&nbsp;&nbsp;
+                <a href="settings.html">Settings</a>
+            </nav>
+        </div>
+        </br></br></br>
+            <article class="box">
+                <div id="form">
+                    <form  id="login_form" action="">
+    
+                        <p>
+                        <label for="mail">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="email" name="name" id="email" required class="form-control">
+                        </p>
+
+                        <p>
+                            <label for="pass">Password:</label>
+                            <input type="password" id="password" name="password" required minlength="6">
+                        </p>
+
+                        <p>
+                            <input type="checkbox" style="width: 15px;bottom:10px"><label style="position: relative;top: -10px;">Remember me</label><a href="password.html" style="float: right;">Forgot Password</a>
+                        </p>
+
+
+                        <p>
+                            <button id="submit" onclick="validate();">Login</button>
+                        </p> 
+    
+                    </form>
+                </div>
+    
+            </article>
+           
+
+
+    </body>
+    </html>

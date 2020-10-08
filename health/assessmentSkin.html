@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>VCare</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="created.js"></script>
+
+    <body>
+        <div class="container">
+            <header class="header">
+             <a href="" class="title">VCare</a>
+            </header>    
+           <nav class="menu">
+             <a href="index.html">Home</a>&nbsp;&nbsp;
+             <a href="profile.html">Create Profile </a>&nbsp;&nbsp;
+             <a href="login.html">Login</a>&nbsp;&nbsp;
+             <a href="symptoms.html">Do assessment</a>&nbsp;&nbsp;
+             <a href="settings.html">Settings</a>
+           </nav>
+
+           <br/><br/>
+           <aside style="height:100%;float: left;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTklgordSQ_OX77L31cDcVbBrhC3EVOC377vg&usqp=CAU">
+           </aside>
+        <article class="assess" style="width:65%;left: 500px;float: right;">
+        <h2 id="head">VIEW ASSESSMENT REPORT</h2>
+        
+        <p>How long this has been troubling you?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="result1"></span></p>
+        <p>Does the rash itches?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="result2"></span></p>
+        <p>Does it have a dry/flaky texture?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="result3"></span></p>
+        <p>Is it swelled?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="result4"></span></p>
+        <p>Does it ooze out pus?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="result5"></span></p>
+        <p>Is it round in shape?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="result6"></span></p>
+        <p>Do you have fever?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="result7"></span></p>
+        <p><a href="suggestionsSkin.html" class="button">Get suggestions</a></p>
+
+        </article>
+       </div>
+       <script>
+           document.getElementById("result1").innerHTML = localStorage.getItem("dd1");
+           document.getElementById("result2").innerHTML = localStorage.getItem("dd2");
+           document.getElementById("result3").innerHTML = localStorage.getItem("dd3");
+           document.getElementById("result4").innerHTML = localStorage.getItem("dd4");
+           document.getElementById("result5").innerHTML = localStorage.getItem("dd5");
+           document.getElementById("result6").innerHTML = localStorage.getItem("dd6");
+           document.getElementById("result7").innerHTML = localStorage.getItem("dd7");
+        </script>
+    </body>
+
+    </html>
+
+
+
+
+
+

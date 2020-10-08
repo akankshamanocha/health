@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>VCare</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="created.js"></script>
+
+    <body>
+        <div class="container">
+            <header class="header">
+             <a href="" class="title">VCare</a>
+            </header>    
+           <nav class="menu">
+             <a href="index.html">Home</a>&nbsp;&nbsp;
+             <a href="profile.html">Create Profile </a>&nbsp;&nbsp;
+             <a href="login.html">Login</a>&nbsp;&nbsp;
+             <a href="symptoms.html">Do assessment</a>&nbsp;&nbsp;
+             <a href="settings.html">Settings</a>
+           </nav>
+
+           <br/><br/>
+           <aside style="width: 25%;float: left;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQNfKCFMtfoBWmM3ANCFo6XLLPlTAX8abCKNw&usqp=CAU">
+           </aside>
+           
+           <div class="outer">
+           <form class="quest" style="width:50%;" action="assessmentFever.html">
+            <p>
+            <label>How long this has been troubling you?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="one">
+                <option></option>
+                <option>Less than one day</option>
+                <option>One day to one week</option>
+                <option>One week to one month</option>
+                <option>One month to one year</option>
+                <option>...more</option>
+            </select>
+            </p>
+
+            <p>
+            <label>What is the temperature of your body?(in F)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="two">
+                <option></option>
+                <option>100</option>
+                <option>Between 100 and 102</option>
+                <option>Above 102</option>
+                <option>I don't know</option>  
+            </select>
+            </p>
+
+            <p>
+            <label>Do you have cough?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="three">
+                <option></option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>I don't know</option>
+            </select>
+            </p>
+
+
+            <p>
+            <label>Is cough dry or wet?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="four">
+                <option></option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>I don't know</option>
+            </select>
+            </p>
+
+
+            <p>
+            <label>Do you feel loss of appetite?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="five">
+                <option></option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>I don't know</option>
+            </select>
+            </p>
+
+
+            <p>
+            <label>Is the temperature of body high in morning and evening?</label>&nbsp;
+            <select id="six">
+                <option></option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>I don't know</option>
+            </select>
+            </p>
+
+
+            <p>
+            <label>Are you vomiting?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="seven"> 
+                <option></option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>I don't know</option>
+            </select>
+            </p>
+
+            <p>
+                <button type="submit" style="background: #3b7687;height: 35px;width:100%;cursor: pointer;border-radius:5px;" onclick="passval();">View assessment</button>
+            </p>
+
+           </form>
+        </div>
+        </div>  
+        <script>
+            function passval()
+            {
+                var oneVal = document.getElementById("one").value;
+                localStorage.setItem("dd1", oneVal);
+
+                var twoVal = document.getElementById("two").value;
+                localStorage.setItem("dd2", twoVal);
+
+                var threeVal = document.getElementById("three").value;
+                localStorage.setItem("dd3", threeVal);
+
+                var fourVal = document.getElementById("four").value;
+                localStorage.setItem("dd4", fourVal);
+
+                var fiveVal = document.getElementById("five").value;
+                localStorage.setItem("dd5", fiveVal);
+
+                var sixVal = document.getElementById("six").value;
+                localStorage.setItem("dd6", sixVal);
+
+                var sevenVal = document.getElementById("seven").value;
+                localStorage.setItem("dd7", sevenVal);
+
+
+                return true;
+            }
+        </script>
+    </body>
+
+</html>

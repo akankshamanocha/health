@@ -1,0 +1,230 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>VCare</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+        <style>
+            body{
+                background-image: url("https://thumbs.dreamstime.com/z/stethoscope-heart-pen-laptop-mouse-cup-coffee-white-background-desk-top-view-copy-space-185453621.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body id="above">
+        <div class="container">
+            <header class="header">
+                <a href="" class="title">VCare</a>
+            </header>    
+            <nav class="menu">
+                 <a href="index.html">Home</a>&nbsp;&nbsp;
+                 <a href="profile.html">Create Profile </a>&nbsp;&nbsp;
+                 <a href="login.html">Login</a>&nbsp;&nbsp;
+                 <a href="symptoms.html">Do assessment</a>&nbsp;&nbsp;
+                 <a href="settings.html">Settings</a>
+            </nav>
+                </br></br></br>
+                <div class="proform">
+                    <form id="profile_form" action="">
+    
+                        <p class="form-control">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                        </p>
+    
+                        <p class="form-control">
+                        <label for="gender">Gender:</label>
+                        <select name="" id="gender">
+                             <option value=""></option>
+                             <option value="male">Male</option>
+                             <option value="female">Female</option>
+                             <option value="other">Other</option>
+                         </select>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                        </p>
+
+                        <p class="form-control">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" >
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                        </p>
+
+                        <p class="form-control">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                        </p>
+
+
+                        <p class="form-control">
+                            <label for="password"> Create Password:</label>
+                            <input type="password" id="password">
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error Msg</small>
+                        </p>
+
+
+                        <p class="form-control">
+                            <label> Confirm Password:</label>
+                            <input type="password" id="cpassword">
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error Msg</small>
+                        </p>
+
+                        <p>
+                            <button id="submit">Create Profile</button>
+                        </p> 
+                        
+                    </form>
+                </div>
+            </div>
+
+
+            <script type="text/javascript">
+
+            const form = document.getElementById('profile_form');
+            const name= document.getElementById('name');
+            const gender= document.getElementById('gender');
+            const age= document.getElementById('age');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const cpassword = document.getElementById('cpassword');
+            
+            form.addEventListener('submit', (event)=>{
+                event.preventDefault();
+                validate();
+            })
+             
+
+            var sendData = (sRate, count) => {
+                if(sRate === count){
+                    alert ('Profile Created!');
+                }
+            }
+
+            //for final success message
+            var successMsg = () => {
+                let formCon= document.getElementsByClassName('form-control');
+
+                var count = formCon.length - 1;
+                for(var i=0 ; i< formCon.length ; i++){
+                    if (formCon[i].className === "form-control success"){
+                        var sRate = 0 + i;
+                        sendData(sRate,count);
+                    }else{
+                        return false;
+                    }
+                }
+            }
+
+
+            //email validate
+            var isEmail = (emailVal) =>{
+                var atSymbol = emailVal.indexOf("@");
+                if (atSymbol < 1) return false;
+                var dot = emailVal.lastIndexOf('.');
+                if (dot <= atSymbol + 2) return false;
+                if (dot === emailVal.length - 1) return false;
+                return true;
+            }
+
+
+            //defining validate function
+
+            var validate = () => {
+                const nameVal = name.value.trim();
+                const genderVal = gender.selectedIndex;
+                const ageVal = age.value.trim();
+                const emailVal = email.value.trim();
+                const passwordVal = password.value.trim();
+                const cpasswordVal = cpassword.value.trim();
+
+                //validating name
+                if (nameVal === ""){
+                    setErrorMsg(name,'Username cannot be blank');
+                }else if(nameVal.length <= 2){
+                    setErrorMsg(name,'Username cannot be less 3 characters');
+                }else{
+                    setSuccessMsg(name);
+                }
+
+                //validating gender
+                if (genderVal == 0){
+                    setErrorMsg(gender,'Gender cannot be blank');
+                }else{
+                    setSuccessMsg(gender);
+                }
+
+
+                //validating email
+                if (emailVal === ""){
+                    setErrorMsg(email,'Email cannot be blank');
+                }else if(!isEmail(emailVal)){
+                    setErrorMsg(email,'Not a valid Email');
+                }else{
+                    setSuccessMsg(email);
+                }
+                
+
+                //validating age
+                if (ageVal === ""){
+                    setErrorMsg(age,'Age cannot be blank');
+                }else if(ageVal <= 0){
+                    setErrorMsg(age,'Age should be a positive number');
+                }else{
+                    setSuccessMsg(age);
+                }
+                
+
+                //validating password
+                if (passwordVal === ""){
+                    setErrorMsg(password,'Password cannot be blank');
+                }else if(passwordVal.length <= 5){
+                    setErrorMsg(password,'Should have atleast 6 characters');
+                }else{
+                    setSuccessMsg(password);
+                }
+
+
+                //validating cpassword
+                if (cpasswordVal === ""){
+                    setErrorMsg(cpassword,'Confirm password cannot be blank');
+                }else if(passwordVal !== cpasswordVal){
+                    setErrorMsg(cpassword,'Confirm password is wrong');
+                }else{
+                    setSuccessMsg(cpassword);
+                }
+
+
+                successMsg();
+            
+            }
+            function setErrorMsg(input, errormsgs){
+                const formControl = input.parentElement;
+                const small = formControl.querySelector('small');
+                formControl.className = "form-control error";
+                small.innerText = errormsgs;
+            }
+
+            function setSuccessMsg(input){
+                const formControl = input.parentElement;
+                formControl.className = "form-control success";
+
+            }
+
+            </script>
+    </body>
+    
+    </html>
